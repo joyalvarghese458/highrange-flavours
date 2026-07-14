@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { RouteScrollReset } from "@/components/RouteScrollReset";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CartProvider } from "@/context/CartContext";
@@ -54,6 +55,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-ivory text-charcoal">
         <CartProvider>
+          <RouteScrollReset />
           <SmoothScroll />
           <Navbar />
           <main>{children}</main>

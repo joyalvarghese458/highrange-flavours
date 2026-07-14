@@ -18,7 +18,24 @@ export function SmoothScroll() {
 
     frameId = requestAnimationFrame(raf);
 
+    const scrollToTop = () => {
+      lenis.scrollTo(0, { force: true, immediate: true });
+    };
+
+    const scrollToTarget = (event: Event) => {
+      const target = (event as CustomEvent<HTMLElement>).detail;
+
+      if (target) {
+        lenis.scrollTo(target, { force: true, immediate: true });
+      }
+    };
+
+    window.addEventListener("highrange:scroll-top", scrollToTop);
+    window.addEventListener("highrange:scroll-target", scrollToTarget);
+
     return () => {
+      window.removeEventListener("highrange:scroll-top", scrollToTop);
+      window.removeEventListener("highrange:scroll-target", scrollToTarget);
       cancelAnimationFrame(frameId);
       lenis.destroy();
     };

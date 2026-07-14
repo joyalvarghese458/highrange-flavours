@@ -26,6 +26,7 @@ export function Navbar() {
 
   return (
     <header
+      style={{ viewTransitionName: "site-header" }}
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         scrolled
           ? "border-forest/10 bg-ivory/92 py-2 shadow-lg shadow-forest/10 backdrop-blur-xl"

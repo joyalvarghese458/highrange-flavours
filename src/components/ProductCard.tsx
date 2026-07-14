@@ -5,7 +5,7 @@ import { Check, Minus, Plus, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { MouseEvent } from "react";
-import { useState } from "react";
+import { startTransition, useState, ViewTransition } from "react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice, Product } from "@/lib/products";
 
@@ -24,7 +24,12 @@ export function ProductCard({ product }: { product: Product }) {
   };
 
   const handleNavigate = () => {
-    router.push(`/products/${product.id}`);
+    startTransition(() => {
+      router.push(`/products/${product.id}`, {
+        scroll: true,
+        transitionTypes: ["nav-forward"],
+      });
+    });
   };
 
   const stopCardNavigation = (event: MouseEvent<HTMLElement>) => {
@@ -54,13 +59,15 @@ export function ProductCard({ product }: { product: Product }) {
       transition={{ duration: 0.55, ease: "easeOut" }}
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-white">
-        <Image
-          src={product.image}
-          alt={`${product.name} from Highrange Flavours`}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
-        />
+        <ViewTransition name={`product-image-${product.id}`} share="product-morph">
+          <Image
+            src={product.image}
+            alt={`${product.name} from Highrange Flavours`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
+          />
+        </ViewTransition>
         {product.badge !== "BULK ORDERS WELCOME" && (
           <div className="absolute left-4 top-4 rounded-r-full bg-gold px-4 py-2 text-[0.68rem] font-black uppercase tracking-[0.18em] text-forest shadow-lg">
             {product.badge}

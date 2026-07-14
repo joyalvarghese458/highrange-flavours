@@ -15,7 +15,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { useState } from "react";
+import { useState, ViewTransition } from "react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice, Product } from "@/lib/products";
 
@@ -38,28 +38,36 @@ export function ProductDetailSection({ product }: { product: Product }) {
       <div className="mx-auto max-w-7xl">
         <Link
           href="/#products"
+          transitionTypes={["nav-back"]}
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-forest/12 bg-white px-4 py-2 text-sm font-extrabold text-forest shadow-sm transition hover:border-gold hover:text-gold"
         >
           <ArrowLeft size={17} />
           Back to Products
         </Link>
 
-      <motion.article
-        key={product.id}
-        className="overflow-hidden rounded-[1.5rem] border border-forest/10 bg-white shadow-[0_30px_90px_rgba(27,59,47,0.12)] sm:rounded-[2rem]"
-        initial={{ opacity: 0, y: 28 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-      >
+        <ViewTransition
+          enter={{ "nav-forward": "nav-forward", "nav-back": "nav-back", default: "none" }}
+          exit={{ "nav-forward": "nav-forward", "nav-back": "nav-back", default: "none" }}
+          default="none"
+        >
+          <motion.article
+            key={product.id}
+            className="overflow-hidden rounded-[1.5rem] border border-forest/10 bg-white shadow-[0_30px_90px_rgba(27,59,47,0.12)] sm:rounded-[2rem]"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.28, ease: "easeOut" }}
+          >
         <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative min-h-[320px] overflow-hidden bg-[linear-gradient(135deg,#fbf7ef,#efe5d2)] sm:min-h-[480px]">
-            <Image
-              src={product.image}
-              alt={`${product.name} product detail`}
-              fill
-              sizes="(max-width: 1024px) 100vw, 52vw"
-              className="object-contain p-8 sm:p-12 lg:p-14"
-            />
+            <ViewTransition name={`product-image-${product.id}`} share="product-morph">
+              <Image
+                src={product.image}
+                alt={`${product.name} product detail`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 52vw"
+                className="object-contain p-8 sm:p-12 lg:p-14"
+              />
+            </ViewTransition>
             <div className="absolute left-5 top-5 rounded-full bg-forest px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-ivory shadow-lg">
               {product.badge}
             </div>
@@ -184,7 +192,8 @@ export function ProductDetailSection({ product }: { product: Product }) {
             </ul>
           </div>
         </div>
-      </motion.article>
+          </motion.article>
+        </ViewTransition>
       </div>
     </section>
   );

@@ -44,3 +44,86 @@ body {
 .gold-ring {
   box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.22), 0 20px 60px rgba(27, 59, 47, 0.12);
 }
+
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+
+::view-transition-old(site-header) {
+  display: none;
+}
+
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+::view-transition-group(.product-morph) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-image-pair(.product-morph) {
+  animation-name: product-soft-focus;
+}
+
+::view-transition-old(.nav-forward) {
+  --slide-offset: -36px;
+  animation:
+    130ms ease-in both page-fade reverse,
+    320ms ease-in-out both page-slide reverse;
+}
+
+::view-transition-new(.nav-forward) {
+  --slide-offset: 36px;
+  animation:
+    190ms ease-out 90ms both page-fade,
+    320ms ease-in-out both page-slide;
+}
+
+::view-transition-old(.nav-back) {
+  --slide-offset: 28px;
+  animation:
+    120ms ease-in both page-fade reverse,
+    280ms ease-in-out both page-slide reverse;
+}
+
+::view-transition-new(.nav-back) {
+  --slide-offset: -28px;
+  animation:
+    170ms ease-out 80ms both page-fade,
+    280ms ease-in-out both page-slide;
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-slide {
+  from {
+    transform: translateX(var(--slide-offset));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes product-soft-focus {
+  35% {
+    filter: blur(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
