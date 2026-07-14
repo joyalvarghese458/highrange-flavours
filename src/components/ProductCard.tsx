@@ -3,11 +3,14 @@
 import { motion } from "framer-motion";
 import { Check, Minus, Plus, ShoppingBag } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import type { MouseEvent } from "react";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice, Product } from "@/lib/products";
 
 export function ProductCard({ product }: { product: Product }) {
+  const router = useRouter();
   const { addItem } = useCart();
   const [variantIndex, setVariantIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -20,9 +23,31 @@ export function ProductCard({ product }: { product: Product }) {
     window.setTimeout(() => setAdded(false), 1800);
   };
 
+  const handleNavigate = () => {
+    router.push(`/products/${product.id}`);
+  };
+
+  const stopCardNavigation = (event: MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+  };
+
   return (
     <motion.article
-      className="group relative overflow-hidden rounded-2xl border border-forest/10 bg-white shadow-[0_20px_60px_rgba(27,59,47,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_80px_rgba(27,59,47,0.16)]"
+      role="link"
+      tabIndex={0}
+      aria-label={`View details for ${product.name}`}
+      onClick={handleNavigate}
+      onKeyDown={(event) => {
+        if (event.currentTarget !== event.target) {
+          return;
+        }
+
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          handleNavigate();
+        }
+      }}
+      className="group relative cursor-pointer overflow-hidden rounded-2xl border border-forest/10 bg-white shadow-[0_20px_60px_rgba(27,59,47,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/70 hover:shadow-[0_26px_80px_rgba(27,59,47,0.16)] focus:outline-none focus-visible:ring-4 focus-visible:ring-gold/35"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -44,19 +69,26 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="p-5 sm:p-6">
-        <h3 className="font-serif text-2xl font-semibold text-forest">
+        <h3 className="font-serif text-2xl font-semibold text-forest transition group-hover:text-gold">
           {product.name}
           <span className="block pt-1 font-sans text-sm font-bold text-charcoal/52">
             {product.localName}
           </span>
         </h3>
 
+        <p className="mt-3 line-clamp-2 min-h-12 text-sm leading-6 text-charcoal/62">
+          {product.shortDescription}
+        </p>
+
         <div className="mt-5 flex flex-wrap gap-2">
           {product.variants.map((item, index) => (
             <button
               type="button"
               key={item.weight}
-              onClick={() => setVariantIndex(index)}
+              onClick={(event) => {
+                stopCardNavigation(event);
+                setVariantIndex(index);
+              }}
               className={`rounded-full border px-4 py-2 text-sm font-extrabold transition-all ${
                 variant.weight === item.weight
                   ? "border-forest bg-forest text-ivory shadow-md"
@@ -87,7 +119,10 @@ export function ProductCard({ product }: { product: Product }) {
             <button
               type="button"
               className="grid size-9 place-items-center rounded-full text-forest transition hover:bg-forest hover:text-ivory"
-              onClick={() => setQuantity((value) => Math.max(1, value - 1))}
+              onClick={(event) => {
+                stopCardNavigation(event);
+                setQuantity((value) => Math.max(1, value - 1));
+              }}
               aria-label={`Decrease ${product.name} quantity`}
             >
               <Minus size={15} />
@@ -98,7 +133,10 @@ export function ProductCard({ product }: { product: Product }) {
             <button
               type="button"
               className="grid size-9 place-items-center rounded-full text-forest transition hover:bg-forest hover:text-ivory"
-              onClick={() => setQuantity((value) => value + 1)}
+              onClick={(event) => {
+                stopCardNavigation(event);
+                setQuantity((value) => value + 1);
+              }}
               aria-label={`Increase ${product.name} quantity`}
             >
               <Plus size={15} />
@@ -108,7 +146,10 @@ export function ProductCard({ product }: { product: Product }) {
 
         <button
           type="button"
-          onClick={handleAdd}
+          onClick={(event) => {
+            stopCardNavigation(event);
+            handleAdd();
+          }}
           className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-gold px-5 py-4 text-sm font-black uppercase tracking-[0.16em] text-forest shadow-lg shadow-gold/20 transition-all duration-300 hover:scale-[1.02] hover:bg-[#dbb63d] hover:shadow-xl active:scale-[0.99]"
         >
           {added ? <Check size={19} /> : <ShoppingBag size={19} />}
