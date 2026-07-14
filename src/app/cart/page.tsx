@@ -49,13 +49,13 @@ export default function CartPage() {
                   key={`${item.productId}-${item.weight}`}
                   className="grid gap-5 border-b border-forest/10 p-4 last:border-b-0 sm:grid-cols-[112px_1fr] sm:p-5 lg:grid-cols-[128px_1fr_auto]"
                 >
-                  <div className="relative aspect-square overflow-hidden rounded-2xl bg-cream-deep">
+                  <div className="relative aspect-square overflow-hidden rounded-2xl bg-white">
                     <Image
                       src={item.image}
                       alt={`${item.name} ${item.weight}`}
                       fill
                       sizes="128px"
-                      className="object-cover"
+                      className="object-contain p-2"
                     />
                   </div>
 

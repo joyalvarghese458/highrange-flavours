@@ -3,12 +3,12 @@ import { SectionReveal } from "./SectionReveal";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
-    alt: "Green plantation hillside in Kerala",
+    src: "/about-cardamom-plants.png",
+    alt: "Cardamom plants growing under shade trees in a high-range plantation",
   },
   {
-    src: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=80",
-    alt: "Fresh spices being prepared after harvest",
+    src: "/about-pepper-plants.png",
+    alt: "Black pepper vines growing in a tropical spice plantation",
   },
 ];
 

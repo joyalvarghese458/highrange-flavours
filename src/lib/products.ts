@@ -18,8 +18,7 @@ export const products: Product[] = [
     id: "premium-cardamom",
     name: "Premium Cardamom",
     localName: "Elaichi",
-    image:
-      "https://images.unsplash.com/photo-1599909533144-cdc9a6c0c00c?auto=format&fit=crop&w=900&q=80",
+    image: "/cardamom.webp",
     badge: "BEST SELLER",
     variants: [
       { weight: "50g", price: 249, originalPrice: 299 },
@@ -31,8 +30,7 @@ export const products: Product[] = [
     id: "black-pepper",
     name: "Black Pepper",
     localName: "Kurumulaku",
-    image:
-      "https://images.unsplash.com/photo-1508616464161-3e7f2e0b7a5c?auto=format&fit=crop&w=900&q=80",
+    image: "/Pepper.webp",
     badge: "BEST SELLER",
     variants: [
       { weight: "100g", price: 129, originalPrice: 159 },
@@ -44,8 +42,7 @@ export const products: Product[] = [
     id: "cloves",
     name: "Cloves",
     localName: "Grambu",
-    image:
-      "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80",
+    image: "/clove.webp",
     badge: "BULK ORDERS WELCOME",
     variants: [
       { weight: "50g", price: 99, originalPrice: 129 },
@@ -57,26 +54,12 @@ export const products: Product[] = [
     id: "cinnamon",
     name: "Cinnamon",
     localName: "Karugapatta",
-    image:
-      "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=900&q=80",
+    image: "/cinnamon.webp",
     badge: "BULK ORDERS WELCOME",
     variants: [
       { weight: "50g", price: 89, originalPrice: 109 },
       { weight: "100g", price: 159, originalPrice: 199 },
       { weight: "200g", price: 289, originalPrice: 349 },
-    ],
-  },
-  {
-    id: "nutmeg",
-    name: "Nutmeg",
-    localName: "Jathikka",
-    image:
-      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=80",
-    badge: "NEW",
-    variants: [
-      { weight: "50g", price: 139, originalPrice: 169 },
-      { weight: "100g", price: 249, originalPrice: 299 },
-      { weight: "200g", price: 449, originalPrice: 549 },
     ],
   },
 ];
