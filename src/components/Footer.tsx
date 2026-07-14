@@ -36,7 +36,10 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer id="contact" className="leaf-pattern bg-forest text-ivory">
+    <footer
+      id="contact"
+      className="border-t border-gold/20 bg-[radial-gradient(circle_at_top_right,rgba(201,162,39,0.10),transparent_32%),linear-gradient(135deg,#0f1f14_0%,#050a07_100%)] text-ivory"
+    >
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
