@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  getCanonicalUrl,
+} from "@/lib/seo";
 
 const titles: Record<string, string> = {
   "privacy-policy": "Privacy Policy",
@@ -12,6 +19,50 @@ type PolicyPageProps = {
     slug: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return Object.keys(titles).map((slug) => ({
+    slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: PolicyPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const title = titles[slug] ?? "Policy";
+  const canonicalPath = `/policy/${slug}`;
+
+  return {
+    title: `${title} | ${SITE_NAME}`,
+    description: `${title} for ${SITE_NAME}, premium Kerala spices from Idukki.`,
+    alternates: {
+      canonical: canonicalPath,
+    },
+    openGraph: {
+      title: `${title} | ${SITE_NAME}`,
+      description: SITE_DESCRIPTION,
+      url: getCanonicalUrl(canonicalPath),
+      siteName: SITE_NAME,
+      images: [
+        {
+          url: DEFAULT_OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: "Premium Kerala spices from Highrange Flavours",
+        },
+      ],
+      locale: "en_IN",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | ${SITE_NAME}`,
+      description: SITE_DESCRIPTION,
+      images: [DEFAULT_OG_IMAGE],
+    },
+  };
+}
 
 export default async function PolicyPage({ params }: PolicyPageProps) {
   const { slug } = await params;

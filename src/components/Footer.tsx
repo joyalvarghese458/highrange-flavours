@@ -78,7 +78,7 @@ export function Footer() {
             </h3>
             <address className="mt-4 space-y-3 text-sm not-italic leading-7 text-ivory/76">
               <p>📞 +91 75929 72101</p>
-              <p>✉️ support@highrangeflavours.in</p>
+              <p>✉️ support@highrangeflavoursidukki.com</p>
               <p>📍 High Range Estate Road, Idukki, Kerala, India - 685602</p>
             </address>
           </div>
