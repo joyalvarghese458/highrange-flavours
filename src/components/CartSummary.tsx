@@ -3,17 +3,25 @@
 import { MessageCircle } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/products";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export function CartSummary() {
   const { items, subtotal } = useCart();
+  const hasPriceOnRequestItems = items.some((item) => item.priceOnRequest);
 
   const message = [
     "Hi, I'd like to place an order:",
     ...items.map(
       (item, index) =>
-        `${index + 1}. ${item.name} (${item.weight}) x${item.quantity} - ${formatPrice(item.unitPrice * item.quantity)}`,
+        `${index + 1}. ${item.name} (${item.weight}) x${item.quantity} - ${
+          item.priceOnRequest
+            ? "Price to be confirmed"
+            : formatPrice(item.unitPrice * item.quantity)
+        }`,
     ),
-    `Grand Total: ${formatPrice(subtotal)}`,
+    hasPriceOnRequestItems
+      ? `Grand Total: ${formatPrice(subtotal)} (excluding items marked price to be confirmed)`
+      : `Grand Total: ${formatPrice(subtotal)}`,
     "Please confirm availability and delivery details.",
   ].join("\n");
 
@@ -24,7 +32,14 @@ export function CartSummary() {
       </h2>
       <div className="mt-6 space-y-4 text-sm">
         <div className="flex items-center justify-between text-charcoal/72">
-          <span>Subtotal</span>
+          <span>
+            Subtotal
+            {hasPriceOnRequestItems ? (
+              <span className="block text-xs text-charcoal/45">
+                Excludes price to be confirmed items
+              </span>
+            ) : null}
+          </span>
           <span className="font-bold text-charcoal">{formatPrice(subtotal)}</span>
         </div>
         <div className="flex items-center justify-between gap-6 text-charcoal/48">
@@ -43,7 +58,7 @@ export function CartSummary() {
       </div>
 
       <a
-        href={`https://wa.me/917592972101?text=${encodeURIComponent(message)}`}
+        href={buildWhatsAppUrl(message)}
         target="_blank"
         rel="noreferrer"
         className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gold px-5 py-4 text-center text-sm font-black uppercase tracking-[0.14em] text-forest shadow-lg shadow-gold/20 transition hover:scale-[1.02] hover:bg-[#dbb63d]"

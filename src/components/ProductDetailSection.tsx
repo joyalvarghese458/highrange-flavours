@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   Check,
   Leaf,
+  MessageCircle,
   Minus,
   Plus,
   ShieldCheck,
@@ -18,6 +19,7 @@ import type { ReactNode } from "react";
 import { useState, ViewTransition } from "react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice, Product } from "@/lib/products";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export function ProductDetailSection({ product }: { product: Product }) {
   const { addItem } = useCart();
@@ -26,6 +28,7 @@ export function ProductDetailSection({ product }: { product: Product }) {
   const [added, setAdded] = useState(false);
 
   const variant = product.variants[variantIndex];
+  const latestPriceMessage = `Hi, I'd like to check the latest price for ${product.name} (${variant.weight}).`;
 
   const handleAdd = () => {
     addItem({ product, variant, quantity });
@@ -120,19 +123,33 @@ export function ProductDetailSection({ product }: { product: Product }) {
             </div>
 
             <div className="mt-8 flex flex-col gap-5 border-t border-forest/10 pt-7 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-charcoal/45">
-                  Price
-                </p>
-                <div className="mt-1 flex items-baseline gap-3">
-                  <span className="font-serif text-4xl font-semibold text-forest">
-                    {formatPrice(variant.price)}
-                  </span>
-                  <span className="text-sm font-bold text-charcoal/45 line-through">
-                    {formatPrice(variant.originalPrice)}
-                  </span>
+              {product.showLatestPriceCTA ? (
+                <div>
+                  <a
+                    href={buildWhatsAppUrl(latestPriceMessage)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-gold/45 px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-forest transition hover:border-gold hover:bg-gold/10"
+                  >
+                    <MessageCircle size={15} aria-hidden="true" />
+                    Check Latest Price
+                  </a>
                 </div>
-              </div>
+              ) : (
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-charcoal/45">
+                    Price
+                  </p>
+                  <div className="mt-1 flex items-baseline gap-3">
+                    <span className="font-serif text-4xl font-semibold text-forest">
+                      {formatPrice(variant.price)}
+                    </span>
+                    <span className="text-sm font-bold text-charcoal/45 line-through">
+                      {formatPrice(variant.originalPrice)}
+                    </span>
+                  </div>
+                </div>
+              )}
 
               <div className="flex h-12 w-fit items-center rounded-full border border-forest/12 bg-ivory p-1">
                 <button

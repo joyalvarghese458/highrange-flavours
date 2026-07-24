@@ -16,6 +16,7 @@ export type Product = {
   aroma: string;
   bestFor: string[];
   highlights: string[];
+  showLatestPriceCTA?: boolean;
   variants: ProductVariant[];
 };
 
@@ -33,6 +34,7 @@ export const products: Product[] = [
     aroma: "Sweet, eucalyptus-like, and floral",
     bestFor: ["Chai", "Biryani", "Payasam", "Bakery"],
     highlights: ["Whole green pods", "Farm-sourced freshness", "Naturally sun-finished"],
+    showLatestPriceCTA: true,
     variants: [
       { weight: "150g", price: 249, originalPrice: 299 },
       { weight: "250g", price: 459, originalPrice: 549 },
@@ -52,6 +54,7 @@ export const products: Product[] = [
     aroma: "Woody, warm, and sharply spicy",
     bestFor: ["Curries", "Soups", "Marinades", "Table grinding"],
     highlights: ["Whole peppercorns", "High essential-oil aroma", "No artificial polish"],
+    showLatestPriceCTA: true,
     variants: [
       { weight: "150g", price: 129, originalPrice: 159 },
       { weight: "250g", price: 279, originalPrice: 339 },

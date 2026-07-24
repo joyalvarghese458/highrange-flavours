@@ -8,7 +8,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import type { Product, ProductVariant } from "@/lib/products";
+import { products, type Product, type ProductVariant } from "@/lib/products";
 
 export type CartItem = {
   productId: string;
@@ -17,6 +17,7 @@ export type CartItem = {
   image: string;
   weight: string;
   unitPrice: number;
+  priceOnRequest?: boolean;
   quantity: number;
 };
 
@@ -47,7 +48,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const timer = window.setTimeout(() => {
       try {
         const saved = window.localStorage.getItem(STORAGE_KEY);
-        setItems(saved ? (JSON.parse(saved) as CartItem[]) : []);
+        const parsed = saved ? (JSON.parse(saved) as CartItem[]) : [];
+
+        setItems(
+          parsed.map((item) => ({
+            ...item,
+            priceOnRequest:
+              item.priceOnRequest ??
+              products.find((product) => product.id === item.productId)
+                ?.showLatestPriceCTA,
+          })),
+        );
       } catch {
         setItems([]);
       } finally {
@@ -89,6 +100,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
             image: product.image,
             weight: variant.weight,
             unitPrice: variant.price,
+            priceOnRequest: product.showLatestPriceCTA,
             quantity,
           },
         ];
@@ -122,7 +134,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     };
 
     const subtotal = items.reduce(
-      (total, item) => total + item.unitPrice * item.quantity,
+      (total, item) =>
+        item.priceOnRequest ? total : total + item.unitPrice * item.quantity,
       0,
     );
 

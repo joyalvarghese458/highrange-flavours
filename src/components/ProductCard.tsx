@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Minus, Plus, ShoppingBag } from "lucide-react";
+import { Check, MessageCircle, Minus, Plus, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { MouseEvent } from "react";
 import { startTransition, useState, ViewTransition } from "react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice, Product } from "@/lib/products";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export function ProductCard({ product }: { product: Product }) {
   const router = useRouter();
@@ -16,6 +17,7 @@ export function ProductCard({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
   const variant = product.variants[variantIndex];
+  const latestPriceMessage = `Hi, I'd like to check the latest price for ${product.name} (${variant.weight}).`;
 
   const handleAdd = () => {
     addItem({ product, variant, quantity });
@@ -108,19 +110,34 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="mt-5 flex items-end justify-between gap-4">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-charcoal/45">
-              Price
-            </p>
-            <div className="mt-1 flex items-baseline gap-3">
-              <span className="font-serif text-3xl font-semibold text-forest">
-                {formatPrice(variant.price)}
-              </span>
-              <span className="text-sm font-bold text-charcoal/45 line-through">
-                {formatPrice(variant.originalPrice)}
-              </span>
+          {product.showLatestPriceCTA ? (
+            <div>
+              <a
+                href={buildWhatsAppUrl(latestPriceMessage)}
+                target="_blank"
+                rel="noreferrer"
+                onClick={stopCardNavigation}
+                className="inline-flex items-center gap-2 rounded-full border border-gold/45 px-3 py-2 text-xs font-black uppercase tracking-[0.12em] text-forest transition hover:border-gold hover:bg-gold/10"
+              >
+                <MessageCircle size={15} aria-hidden="true" />
+                Check Latest Price
+              </a>
             </div>
-          </div>
+          ) : (
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-charcoal/45">
+                Price
+              </p>
+              <div className="mt-1 flex items-baseline gap-3">
+                <span className="font-serif text-3xl font-semibold text-forest">
+                  {formatPrice(variant.price)}
+                </span>
+                <span className="text-sm font-bold text-charcoal/45 line-through">
+                  {formatPrice(variant.originalPrice)}
+                </span>
+              </div>
+            </div>
+          )}
 
           <div className="flex h-11 items-center rounded-full border border-forest/12 bg-ivory p-1">
             <button

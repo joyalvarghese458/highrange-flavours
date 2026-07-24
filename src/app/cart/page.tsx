@@ -67,10 +67,18 @@ export default function CartPage() {
                       {item.localName} · {item.weight}
                     </p>
                     <p className="mt-4 text-sm text-charcoal/60">
-                      Unit price{" "}
-                      <span className="font-bold text-charcoal">
-                        {formatPrice(item.unitPrice)}
-                      </span>
+                      {item.priceOnRequest ? (
+                        <span className="font-bold text-forest">
+                          Price to be confirmed
+                        </span>
+                      ) : (
+                        <>
+                          Unit price{" "}
+                          <span className="font-bold text-charcoal">
+                            {formatPrice(item.unitPrice)}
+                          </span>
+                        </>
+                      )}
                     </p>
 
                     <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -120,12 +128,20 @@ export default function CartPage() {
                   </div>
 
                   <div className="flex items-end justify-between gap-4 lg:min-w-32 lg:flex-col lg:items-end">
-                    <span className="text-sm font-bold uppercase tracking-[0.14em] text-charcoal/45">
-                      Line total
-                    </span>
-                    <span className="font-serif text-3xl font-semibold text-forest">
-                      {formatPrice(item.unitPrice * item.quantity)}
-                    </span>
+                    {item.priceOnRequest ? (
+                      <span className="text-right text-sm font-bold leading-6 text-forest">
+                        Check latest price on WhatsApp
+                      </span>
+                    ) : (
+                      <>
+                        <span className="text-sm font-bold uppercase tracking-[0.14em] text-charcoal/45">
+                          Line total
+                        </span>
+                        <span className="font-serif text-3xl font-semibold text-forest">
+                          {formatPrice(item.unitPrice * item.quantity)}
+                        </span>
+                      </>
+                    )}
                   </div>
                 </div>
               ))}
