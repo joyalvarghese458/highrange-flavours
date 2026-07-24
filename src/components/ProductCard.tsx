@@ -70,7 +70,7 @@ export function ProductCard({ product }: { product: Product }) {
             className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
           />
         </ViewTransition>
-        {product.badge !== "BULK ORDERS WELCOME" && (
+        {product.badge && product.badge !== "BULK ORDERS WELCOME" && (
           <div className="absolute left-4 top-4 rounded-r-full bg-gold px-4 py-2 text-[0.68rem] font-black uppercase tracking-[0.18em] text-forest shadow-lg">
             {product.badge}
           </div>

@@ -9,7 +9,7 @@ export type Product = {
   name: string;
   localName: string;
   image: string;
-  badge: "BEST SELLER" | "BULK ORDERS WELCOME" | "NEW";
+  badge?: "BEST SELLER" | "BULK ORDERS WELCOME" | "NEW";
   shortDescription: string;
   detailDescription: string;
   origin: string;
@@ -97,6 +97,24 @@ export const products: Product[] = [
       { weight: "150g", price: 89, originalPrice: 109 },
       { weight: "250g", price: 159, originalPrice: 199 },
       { weight: "500g", price: 289, originalPrice: 349 },
+    ],
+  },
+  {
+    id: "premium-cardamom-tea",
+    name: "Premium Cardamom Tea",
+    localName: "Elaichi Chaya",
+    image: "/tea.webp",
+    shortDescription: "Fragrant cardamom tea with a smooth, refreshing finish.",
+    detailDescription:
+      "A comforting cardamom tea blend crafted for rich aroma, balanced taste, and everyday refreshment. It brings the warm lift of cardamom into every cup.",
+    origin: "Idukki high ranges, Kerala",
+    aroma: "Warm, sweet, and cardamom-rich",
+    bestFor: ["Morning tea", "Evening chai", "Guests", "Daily refreshment"],
+    highlights: ["Cardamom-infused blend", "Rich natural aroma", "Smooth everyday cup"],
+    variants: [
+      { weight: "150g", price: 99, originalPrice: 129 },
+      { weight: "250g", price: 179, originalPrice: 229 },
+      { weight: "500g", price: 329, originalPrice: 399 },
     ],
   },
 ];

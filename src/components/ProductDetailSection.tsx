@@ -71,9 +71,11 @@ export function ProductDetailSection({ product }: { product: Product }) {
                 className="object-contain p-8 sm:p-12 lg:p-14"
               />
             </ViewTransition>
-            <div className="absolute left-5 top-5 rounded-full bg-forest px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-ivory shadow-lg">
-              {product.badge}
-            </div>
+            {product.badge && (
+              <div className="absolute left-5 top-5 rounded-full bg-forest px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-ivory shadow-lg">
+                {product.badge}
+              </div>
+            )}
           </div>
 
           <div className="p-5 sm:p-8 lg:p-10">
