@@ -112,9 +112,7 @@ export const products: Product[] = [
     bestFor: ["Morning tea", "Evening chai", "Guests", "Daily refreshment"],
     highlights: ["Cardamom-infused blend", "Rich natural aroma", "Smooth everyday cup"],
     variants: [
-      { weight: "150g", price: 99, originalPrice: 129 },
       { weight: "250g", price: 179, originalPrice: 229 },
-      { weight: "500g", price: 329, originalPrice: 399 },
     ],
   },
 ];
