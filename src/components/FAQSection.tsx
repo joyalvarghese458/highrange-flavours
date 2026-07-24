@@ -6,34 +6,44 @@ import { SectionReveal } from "./SectionReveal";
 
 const faqs = [
   {
-    question: "Where do your spices come from?",
+    question: "Where are your spices sourced from?",
     answer:
-      "Our cardamom and black pepper are grown in our own plantations in the high ranges of Idukki, Kerala. Each batch is handpicked from carefully tended plants to bring you the real aroma and character of the hills.",
+      "Our spices are carefully sourced from the high ranges of Idukki, Kerala, a region known for producing premium quality spices with exceptional aroma and flavor.",
   },
   {
-    question: "How fresh are the spices when I receive them?",
+    question: "Are your spices 100% natural?",
     answer:
-      "We pack in small batches so the spices reach you with their natural oils, aroma, and flavour intact. After harvest, they are naturally dried, sorted, and hygienically packed with freshness as the priority.",
+      "Yes. Our spices are made from carefully selected ingredients without artificial colors, preservatives, or added flavors, ensuring authentic taste and quality.",
   },
   {
-    question: "Do you ship pan-India?",
+    question: "How should I store the spices?",
     answer:
-      "Yes, we deliver across India. Once your order is packed, it is shipped through trusted delivery partners so our Idukki-grown spices can reach homes throughout the country.",
+      "Store the spices in an airtight container in a cool, dry place away from direct sunlight and moisture to preserve their freshness and aroma.",
   },
   {
-    question: "What packaging do you use?",
+    question: "Do you deliver across India?",
     answer:
-      "Our spices are hygienically packed in clean, food-safe packaging designed to protect them from moisture and preserve their aroma until they reach your kitchen.",
+      "Yes. We offer delivery across India through trusted courier partners. Shipping timelines may vary depending on your location.",
   },
   {
-    question: "Do you offer bulk or wholesale orders?",
+    question: "How long do your spices stay fresh?",
     answer:
-      "Yes, we welcome bulk and wholesale enquiries for homes, retailers, restaurants, and gifting needs. You can contact us with your required quantity, and we will share availability and current pricing.",
+      "When stored properly, our spices retain their freshness and flavor for the duration mentioned on the product packaging. We recommend using them within the best before period for optimal taste.",
   },
   {
-    question: "What is your return/refund policy?",
+    question: "Are your spice powders freshly ground?",
     answer:
-      "If your order arrives damaged, incorrect, or with a quality concern, please contact us soon after delivery with order details and photos. We will review it carefully and help with a suitable replacement or refund where applicable.",
+      "Yes. Our spices are processed in small batches and packed carefully to retain their natural oils, aroma, and freshness before reaching our customers.",
+  },
+  {
+    question: "Can I place bulk or wholesale orders?",
+    answer:
+      "Absolutely. We welcome bulk, wholesale, and business orders for retailers, restaurants, and distributors. Please contact us for pricing and availability.",
+  },
+  {
+    question: "How can I contact customer support?",
+    answer:
+      "You can reach us through our contact page, phone number, WhatsApp, or email. Our team is happy to assist with product inquiries, orders, and shipping questions.",
   },
 ];
 
