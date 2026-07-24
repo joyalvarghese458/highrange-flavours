@@ -34,9 +34,9 @@ export const products: Product[] = [
     bestFor: ["Chai", "Biryani", "Payasam", "Bakery"],
     highlights: ["Whole green pods", "Farm-sourced freshness", "Naturally sun-finished"],
     variants: [
-      { weight: "50g", price: 249, originalPrice: 299 },
-      { weight: "100g", price: 459, originalPrice: 549 },
-      { weight: "250g", price: 1049, originalPrice: 1249 },
+      { weight: "150g", price: 249, originalPrice: 299 },
+      { weight: "250g", price: 459, originalPrice: 549 },
+      { weight: "500g", price: 1049, originalPrice: 1249 },
     ],
   },
   {
@@ -53,7 +53,7 @@ export const products: Product[] = [
     bestFor: ["Curries", "Soups", "Marinades", "Table grinding"],
     highlights: ["Whole peppercorns", "High essential-oil aroma", "No artificial polish"],
     variants: [
-      { weight: "100g", price: 129, originalPrice: 159 },
+      { weight: "150g", price: 129, originalPrice: 159 },
       { weight: "250g", price: 279, originalPrice: 339 },
       { weight: "500g", price: 499, originalPrice: 599 },
     ],
@@ -72,9 +72,9 @@ export const products: Product[] = [
     bestFor: ["Masala tea", "Biriyani", "Garam masala", "Festive sweets"],
     highlights: ["Whole flower buds", "Strong natural fragrance", "Bulk order friendly"],
     variants: [
-      { weight: "50g", price: 99, originalPrice: 129 },
-      { weight: "100g", price: 179, originalPrice: 229 },
-      { weight: "200g", price: 329, originalPrice: 399 },
+      { weight: "150g", price: 99, originalPrice: 129 },
+      { weight: "250g", price: 179, originalPrice: 229 },
+      { weight: "500g", price: 329, originalPrice: 399 },
     ],
   },
   {
@@ -91,9 +91,9 @@ export const products: Product[] = [
     bestFor: ["Tea", "Desserts", "Rice dishes", "Spice blends"],
     highlights: ["Whole bark pieces", "Warm natural sweetness", "Great for home and bulk use"],
     variants: [
-      { weight: "50g", price: 89, originalPrice: 109 },
-      { weight: "100g", price: 159, originalPrice: 199 },
-      { weight: "200g", price: 289, originalPrice: 349 },
+      { weight: "150g", price: 89, originalPrice: 109 },
+      { weight: "250g", price: 159, originalPrice: 199 },
+      { weight: "500g", price: 289, originalPrice: 349 },
     ],
   },
 ];
