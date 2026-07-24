@@ -10,7 +10,8 @@ export function Hero() {
         alt="Misty green spice plantation in the high ranges"
         fill
         preload
-        sizes="100vw"
+        quality={95}
+        sizes="(max-width: 639px) 1900px, 100vw"
         className="object-cover object-[72%_center] sm:object-center"
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62),rgba(0,0,0,0.38)_46%,rgba(0,0,0,0.22))] sm:hidden" />
