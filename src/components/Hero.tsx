@@ -6,14 +6,15 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-[760px] overflow-hidden bg-forest">
       <Image
-        src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1800&q=82"
+        src="/banner.webp"
         alt="Misty green spice plantation in the high ranges"
         fill
         preload
         sizes="100vw"
-        className="object-cover opacity-55"
+        className="object-cover object-[72%_center] opacity-65 sm:object-center sm:opacity-55"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(27,59,47,0.92),rgba(27,59,47,0.58),rgba(27,59,47,0.18))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(27,59,47,0.9),rgba(27,59,47,0.68)_46%,rgba(27,59,47,0.42))] sm:hidden" />
+      <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(27,59,47,0.92),rgba(27,59,47,0.58),rgba(27,59,47,0.18))] sm:block" />
       <div className="absolute inset-0 leaf-pattern opacity-30" />
 
       <div className="relative mx-auto flex min-h-[760px] w-full max-w-7xl items-center px-4 pb-16 pt-32 sm:px-6 lg:px-8">
