@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SectionReveal } from "./SectionReveal";
 
 const images = [
@@ -64,6 +65,12 @@ export function About() {
               ),
             )}
           </div>
+          <Link
+            href="/about"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-forest shadow-xl shadow-forest/10 transition-all duration-300 hover:scale-[1.03] hover:bg-[#d9b63b]"
+          >
+            View More
+          </Link>
         </SectionReveal>
       </div>
     </section>

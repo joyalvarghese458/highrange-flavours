@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.3,
     },
+    {
+      url: getCanonicalUrl("/about"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     ...products.map((product) => ({
       url: getCanonicalUrl(`/products/${product.id}`),
       lastModified,
