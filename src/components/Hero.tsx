@@ -6,13 +6,22 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-[760px] overflow-hidden bg-forest">
       <Image
+        src="/landing-mobile-view.webp"
+        alt="Misty green spice plantation in the high ranges"
+        fill
+        preload
+        quality={95}
+        sizes="(max-width: 639px) 100vw"
+        className="object-cover sm:hidden"
+      />
+      <Image
         src="/banner.webp"
         alt="Misty green spice plantation in the high ranges"
         fill
         preload
         quality={95}
-        sizes="(max-width: 639px) 1900px, 100vw"
-        className="object-cover object-[72%_center] sm:object-center"
+        sizes="(min-width: 640px) 100vw"
+        className="hidden object-cover object-center sm:block"
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62),rgba(0,0,0,0.38)_46%,rgba(0,0,0,0.22))] sm:hidden" />
       <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(0,0,0,0.58),rgba(0,0,0,0.34),rgba(0,0,0,0.08))] sm:block" />
