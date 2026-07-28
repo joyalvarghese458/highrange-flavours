@@ -191,10 +191,7 @@ export default function AboutPage() {
       <section className="bg-forest px-4 pb-20 pt-36 text-ivory sm:px-6 sm:pb-24 sm:pt-40 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           <SectionReveal>
-            <p className="text-sm font-extrabold uppercase tracking-[0.28em] text-gold">
-              Our Story
-            </p>
-            <h1 className="mt-4 font-serif text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
+            <h1 className="font-serif text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
               Our Story
             </h1>
             <div className="mt-6 space-y-5 text-base leading-8 text-ivory/82 sm:text-lg">
