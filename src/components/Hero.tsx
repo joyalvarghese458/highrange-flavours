@@ -4,7 +4,10 @@ import { InternalHashLink } from "./InternalHashLink";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-[760px] overflow-hidden bg-forest">
+    <section
+      id="home"
+      className="relative min-h-[760px] overflow-hidden bg-forest"
+    >
       <Image
         src="/landing-mobile-view.webp"
         alt="Misty green spice plantation in the high ranges"
@@ -26,9 +29,9 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62),rgba(0,0,0,0.38)_46%,rgba(0,0,0,0.22))] sm:hidden" />
       <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(0,0,0,0.58),rgba(0,0,0,0.34),rgba(0,0,0,0.08))] sm:block" />
 
-      <div className="relative mx-auto flex min-h-[760px] w-full max-w-7xl items-center px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-[760px] w-full max-w-7xl items-center px-4 pb-16 pt-92 sm:px-6 sm:pt-32 lg:px-8">
         <div className="max-w-3xl">
-          <div className="mb-6 inline-flex max-w-full items-center rounded-full border border-gold/35 bg-ivory/12 px-4 py-2 text-sm font-bold text-ivory shadow-lg shadow-black/10 backdrop-blur-md">
+          <div className="invisible mb-6 inline-flex max-w-full -translate-y-65 items-center rounded-full border border-gold/35 bg-ivory/12 px-4 py-2 text-sm font-bold text-ivory shadow-lg shadow-black/10 backdrop-blur-md sm:visible sm:translate-y-0">
             <span className="mr-2 text-gold" aria-hidden="true">
               🌿
             </span>
