@@ -10,7 +10,13 @@ import { useCart } from "@/context/CartContext";
 import { formatPrice, Product } from "@/lib/products";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({
+  product,
+  eagerImage = false,
+}: {
+  product: Product;
+  eagerImage?: boolean;
+}) {
   const router = useRouter();
   const { addItem } = useCart();
   const [variantIndex, setVariantIndex] = useState(0);
@@ -66,6 +72,7 @@ export function ProductCard({ product }: { product: Product }) {
             src={product.image}
             alt={`${product.name} from Highrange Flavours`}
             fill
+            loading={eagerImage ? "eager" : "lazy"}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
           />

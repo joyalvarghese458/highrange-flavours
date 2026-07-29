@@ -20,8 +20,12 @@ export function ProductGrid() {
         </SectionReveal>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.map((product, index) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              eagerImage={index === 0}
+            />
           ))}
         </div>
       </div>

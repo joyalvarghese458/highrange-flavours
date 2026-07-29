@@ -48,7 +48,7 @@ export function Navbar() {
             Highrange Flavours
           </span>
           <span
-            className={`mt-1 block text-[0.62rem] font-bold uppercase tracking-[0.34em] ${
+            className={`mt-1 block text-[0.62rem] font-bold uppercase tracking-[0.16em] md:tracking-[0.34em] ${
               scrolled ? "text-charcoal/55" : "text-ivory/75"
             }`}
           >
