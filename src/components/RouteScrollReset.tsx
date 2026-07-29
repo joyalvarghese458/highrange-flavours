@@ -23,6 +23,8 @@ export function RouteScrollReset() {
       };
 
       requestAnimationFrame(scrollToHashTarget);
+      window.setTimeout(scrollToHashTarget, 80);
+      window.setTimeout(scrollToHashTarget, 220);
       return;
     }
 

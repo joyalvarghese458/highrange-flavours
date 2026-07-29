@@ -4,6 +4,7 @@ import { Menu, ShoppingBag, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { InternalHashLink } from "./InternalHashLink";
 
 const links = [
   { label: "Home", href: "/" },
@@ -57,7 +58,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
-            <Link
+            <InternalHashLink
               key={link.label}
               href={link.href}
               className={`text-sm font-bold uppercase tracking-[0.18em] transition-colors ${
@@ -67,7 +68,7 @@ export function Navbar() {
               }`}
             >
               {link.label}
-            </Link>
+            </InternalHashLink>
           ))}
         </div>
 
@@ -106,14 +107,14 @@ export function Navbar() {
       {open && (
         <div className="mx-4 mt-3 rounded-2xl border border-forest/10 bg-ivory p-3 shadow-xl shadow-forest/15 lg:hidden">
           {links.map((link) => (
-            <Link
+            <InternalHashLink
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
               className="block rounded-xl px-4 py-3 text-sm font-bold uppercase tracking-[0.16em] text-forest hover:bg-forest/8"
             >
               {link.label}
-            </Link>
+            </InternalHashLink>
           ))}
         </div>
       )}

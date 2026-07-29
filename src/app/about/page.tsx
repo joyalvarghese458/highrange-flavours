@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Award,
   CheckCircle2,
@@ -14,6 +13,7 @@ import {
   Star,
 } from "lucide-react";
 import { BulkOrderNotice } from "@/components/BulkOrderNotice";
+import { InternalHashLink } from "@/components/InternalHashLink";
 import { SectionReveal } from "@/components/SectionReveal";
 import { DEFAULT_OG_IMAGE, SITE_NAME, getCanonicalUrl } from "@/lib/seo";
 
@@ -491,12 +491,12 @@ export default function AboutPage() {
               Bring authentic Kerala spices home.
             </h2>
           </div>
-          <Link
+          <InternalHashLink
             href="/#products"
             className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-extrabold uppercase tracking-[0.14em] text-forest transition hover:bg-[#d9b63b]"
           >
             Shop Now
-          </Link>
+          </InternalHashLink>
         </SectionReveal>
       </section>
     </>

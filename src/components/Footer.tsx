@@ -1,5 +1,6 @@
 import { Camera, Globe, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { InternalHashLink } from "./InternalHashLink";
 
 const columns = [
   {
@@ -60,12 +61,21 @@ export function Footer() {
               <ul className="mt-4 space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm font-semibold text-ivory/74 transition hover:text-gold"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.href.includes("#") ? (
+                      <InternalHashLink
+                        href={link.href}
+                        className="text-sm font-semibold text-ivory/74 transition hover:text-gold"
+                      >
+                        {link.label}
+                      </InternalHashLink>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm font-semibold text-ivory/74 transition hover:text-gold"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

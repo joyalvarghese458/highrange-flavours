@@ -1,5 +1,5 @@
 import { MessageCircle, PackageCheck } from "lucide-react";
-import Link from "next/link";
+import { InternalHashLink } from "./InternalHashLink";
 
 const bulkOrderMessage =
   "Hi%2C%20I%27d%20like%20to%20place%20a%20bulk%20order%20with%20Highrange%20Flavours.";
@@ -27,12 +27,12 @@ export function BulkOrderNotice() {
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row md:shrink-0">
-          <Link
+          <InternalHashLink
             href="/#contact"
             className="inline-flex items-center justify-center rounded-full border border-gold/35 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.14em] text-gold transition hover:bg-gold hover:text-forest"
           >
             Contact Us
-          </Link>
+          </InternalHashLink>
           <a
             href={`https://wa.me/917592972101?text=${bulkOrderMessage}`}
             target="_blank"

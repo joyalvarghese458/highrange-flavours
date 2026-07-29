@@ -14,12 +14,12 @@ import {
   Truck,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { useState, ViewTransition } from "react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice, Product } from "@/lib/products";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { InternalHashLink } from "./InternalHashLink";
 
 export function ProductDetailSection({ product }: { product: Product }) {
   const { addItem } = useCart();
@@ -39,14 +39,14 @@ export function ProductDetailSection({ product }: { product: Product }) {
   return (
     <section className="bg-ivory px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <Link
+        <InternalHashLink
           href="/#products"
           transitionTypes={["nav-back"]}
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-forest/12 bg-white px-4 py-2 text-sm font-extrabold text-forest shadow-sm transition hover:border-gold hover:text-gold"
         >
           <ArrowLeft size={17} />
           Back to Products
-        </Link>
+        </InternalHashLink>
 
         <ViewTransition
           enter={{ "nav-forward": "nav-forward", "nav-back": "nav-back", default: "none" }}

@@ -2,8 +2,8 @@
 
 import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { CartSummary } from "@/components/CartSummary";
+import { InternalHashLink } from "@/components/InternalHashLink";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/products";
 
@@ -34,12 +34,12 @@ export default function CartPage() {
               Add cardamom, pepper, cloves, cinnamon, or nutmeg and send your
               order to our team on WhatsApp for confirmation.
             </p>
-            <Link
+            <InternalHashLink
               href="/#products"
               className="mt-7 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-black uppercase tracking-[0.14em] text-forest transition hover:scale-105"
             >
               Continue Shopping
-            </Link>
+            </InternalHashLink>
           </div>
         ) : (
           <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_380px]">

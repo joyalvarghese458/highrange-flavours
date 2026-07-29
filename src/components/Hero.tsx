@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { InternalHashLink } from "./InternalHashLink";
 
 export function Hero() {
   return (
@@ -41,13 +41,13 @@ export function Hero() {
             Premium, naturally grown spices — handpicked from our own farms in
             the high ranges of Idukki, Kerala.
           </p>
-          <Link
+          <InternalHashLink
             href="/#products"
             className="mt-9 inline-flex items-center gap-3 rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-forest shadow-2xl shadow-black/20 transition-all duration-300 hover:scale-[1.03] hover:bg-[#d9b63b] hover:shadow-gold/25"
           >
             Shop Now
             <ArrowRight size={18} />
-          </Link>
+          </InternalHashLink>
         </div>
       </div>
     </section>

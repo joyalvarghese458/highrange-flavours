@@ -1,32 +1,18 @@
 "use client";
 
-import Lenis from "lenis";
 import { useEffect } from "react";
 
 export function SmoothScroll() {
   useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.08,
-      smoothWheel: true,
-    });
-
-    let frameId = 0;
-    const raf = (time: number) => {
-      lenis.raf(time);
-      frameId = requestAnimationFrame(raf);
-    };
-
-    frameId = requestAnimationFrame(raf);
-
     const scrollToTop = () => {
-      lenis.scrollTo(0, { force: true, immediate: true });
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     };
 
     const scrollToTarget = (event: Event) => {
       const target = (event as CustomEvent<HTMLElement>).detail;
 
       if (target) {
-        lenis.scrollTo(target, { force: true, immediate: true });
+        target.scrollIntoView({ block: "start", behavior: "instant" });
       }
     };
 
@@ -36,8 +22,6 @@ export function SmoothScroll() {
     return () => {
       window.removeEventListener("highrange:scroll-top", scrollToTop);
       window.removeEventListener("highrange:scroll-target", scrollToTarget);
-      cancelAnimationFrame(frameId);
-      lenis.destroy();
     };
   }, []);
 
