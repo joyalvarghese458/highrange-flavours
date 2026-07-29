@@ -37,10 +37,10 @@ export function Hero() {
             </span>
             100% Farm Fresh · Now Delivering Across India
           </div>
-          <h1 className="font-serif text-5xl font-semibold leading-[0.98] text-ivory sm:text-6xl lg:text-7xl xl:text-8xl">
+          <h1 className="font-serif text-5xl font-semibold leading-[0.98] text-white sm:text-6xl lg:text-7xl xl:text-8xl">
             From Our Land to Your Hands
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-ivory/86 sm:text-xl">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/95 sm:text-xl">
             Premium, naturally grown spices — handpicked from our own farms in
             the high ranges of Idukki, Kerala.
           </p>
