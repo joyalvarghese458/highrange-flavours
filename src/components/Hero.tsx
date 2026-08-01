@@ -31,7 +31,7 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-[700px] w-full max-w-7xl items-center px-4 pb-12 pt-52 sm:px-6 sm:pt-32 md:min-h-[760px] md:pb-16 lg:px-8">
         <div className="max-w-3xl">
-          <div className="mb-4 inline-flex max-w-full items-center rounded-full border border-gold/35 bg-ivory/12 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-ivory shadow-lg shadow-black/10 backdrop-blur-md md:mb-6 md:px-4 md:py-2 md:text-sm md:normal-case md:tracking-normal">
+          <div className="mb-6 hidden max-w-full items-center rounded-full border border-gold/35 bg-ivory/12 px-4 py-2 text-sm font-bold text-ivory shadow-lg shadow-black/10 backdrop-blur-md md:inline-flex">
             <span className="mr-2 text-gold" aria-hidden="true">
               🌿
             </span>
