@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, ShoppingBag, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
@@ -37,23 +38,34 @@ export function Navbar() {
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group leading-none"
+          className="relative block h-10 w-[clamp(150px,47vw,180px)] shrink-0 overflow-hidden sm:h-[42px] sm:w-[200px]"
           aria-label="Highrange Flavours home"
         >
-          <span
-            className={`block font-serif text-xl font-semibold tracking-wide transition-colors sm:text-2xl ${
-              scrolled ? "text-forest" : "text-gold"
+          <Image
+            src="/hf-website-logo.png"
+            alt=""
+            width={3479}
+            height={901}
+            loading="eager"
+            className={`absolute left-0 top-0 h-[49px] w-auto max-w-none origin-left -translate-x-5 -translate-y-[3px] transition-[opacity,scale] duration-500 ease-out sm:h-[63px] sm:-translate-x-[26px] sm:-translate-y-2 ${
+              scrolled
+                ? "pointer-events-none scale-95 opacity-0"
+                : "scale-100 opacity-100"
             }`}
-          >
-            Highrange Flavours
-          </span>
-          <span
-            className={`mt-1 block text-[0.62rem] font-bold uppercase tracking-[0.16em] md:tracking-[0.34em] ${
-              scrolled ? "text-charcoal/55" : "text-ivory/75"
+          />
+
+          <Image
+            src="/hf-website-logo-2.png"
+            alt=""
+            width={3479}
+            height={1072}
+            loading="eager"
+            className={`absolute left-0 top-0 h-[58px] w-auto max-w-none origin-left -translate-x-[19px] -translate-y-[10px] transition-[opacity,scale] duration-500 ease-out sm:h-[78px] sm:-translate-x-[25px] sm:-translate-y-5 ${
+              scrolled
+                ? "scale-100 opacity-100"
+                : "pointer-events-none scale-95 opacity-0"
             }`}
-          >
-            Idukki, Kerala
-          </span>
+          />
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
