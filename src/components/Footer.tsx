@@ -87,9 +87,9 @@ export function Footer() {
               Contact Us
             </h3>
             <address className="mt-4 space-y-3 text-sm not-italic leading-7 text-ivory/76">
-              <p>📞 +91 75929 72101</p>
-              <p>✉️ support@highrangeflavoursidukki.com</p>
-              <p>📍 High Range Estate Road, Idukki, Kerala, India - 685602</p>
+              <p>📞 +91 6282 337 643 | +91 7592 972 101</p>
+              <p>✉️ highrangeflavoursidukki@gmail.com</p>
+              <p>📍 Kumily-Anakkara, Idukki - 685509</p>
             </address>
           </div>
         </div>
@@ -109,7 +109,7 @@ export function Footer() {
               <Camera size={18} />
             </a>
             <a
-              href="https://wa.me/917592972101"
+              href="https://wa.me/916282337643"
               target="_blank"
               rel="noreferrer"
               className="grid size-10 place-items-center rounded-full border border-gold/30 text-gold transition hover:bg-gold hover:text-forest"

@@ -34,7 +34,7 @@ export function BulkOrderNotice() {
             Contact Us
           </InternalHashLink>
           <a
-            href={`https://wa.me/917592972101?text=${bulkOrderMessage}`}
+            href={`https://wa.me/916282337643?text=${bulkOrderMessage}`}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-extrabold uppercase tracking-[0.16em] text-forest transition hover:bg-[#d9b63b] md:tracking-[0.14em]"
