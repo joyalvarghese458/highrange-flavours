@@ -38,7 +38,7 @@ export function Navbar() {
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="relative block h-10 w-[clamp(150px,47vw,180px)] shrink-0 overflow-hidden sm:h-[42px] sm:w-[200px]"
+          className="relative block h-[46px] w-[clamp(175px,52vw,205px)] shrink-0 overflow-hidden sm:h-[50px] sm:w-60"
           aria-label="Highrange Flavours home"
         >
           <Image
@@ -47,7 +47,7 @@ export function Navbar() {
             width={3479}
             height={901}
             loading="eager"
-            className={`absolute left-0 top-0 h-[49px] w-auto max-w-none origin-left -translate-x-5 -translate-y-[3px] transition-[opacity,scale] duration-500 ease-out sm:h-[63px] sm:-translate-x-[26px] sm:-translate-y-2 ${
+            className={`absolute left-0 top-0 h-[58px] w-auto max-w-none origin-left -translate-x-[23px] -translate-y-1 transition-[opacity,scale] duration-500 ease-out sm:h-[79px] sm:-translate-x-8 sm:-translate-y-3 ${
               scrolled
                 ? "pointer-events-none scale-95 opacity-0"
                 : "scale-100 opacity-100"
@@ -60,7 +60,7 @@ export function Navbar() {
             width={3479}
             height={1072}
             loading="eager"
-            className={`absolute left-0 top-0 h-[58px] w-auto max-w-none origin-left -translate-x-[19px] -translate-y-[10px] transition-[opacity,scale] duration-500 ease-out sm:h-[78px] sm:-translate-x-[25px] sm:-translate-y-5 ${
+            className={`absolute left-0 top-0 h-[69px] w-auto max-w-none origin-left -translate-x-[22px] -translate-y-[13px] transition-[opacity,scale] duration-500 ease-out sm:h-[94px] sm:-translate-x-[30px] sm:-translate-y-[23px] ${
               scrolled
                 ? "scale-100 opacity-100"
                 : "pointer-events-none scale-95 opacity-0"
