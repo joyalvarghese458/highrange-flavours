@@ -30,7 +30,7 @@ export function Hero() {
       <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(0,0,0,0.58),rgba(0,0,0,0.34),rgba(0,0,0,0.08))] md:block" />
 
       <div className="relative mx-auto flex min-h-[700px] w-full max-w-7xl items-center px-4 pb-12 pt-52 sm:px-6 sm:pt-32 md:min-h-[760px] md:pb-16 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl translate-y-12 md:translate-y-0">
           <div className="mb-6 hidden max-w-full items-center rounded-full border border-gold/35 bg-ivory/12 px-4 py-2 text-sm font-bold text-ivory shadow-lg shadow-black/10 backdrop-blur-md md:inline-flex">
             <span className="mr-2 text-gold" aria-hidden="true">
               🌿
