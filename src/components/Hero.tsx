@@ -15,7 +15,7 @@ export function Hero() {
         preload
         quality={95}
         sizes="(max-width: 767px) 100vw"
-        className="object-cover md:hidden"
+        className="object-cover object-top md:hidden"
       />
       <Image
         src="/banner.webp"
