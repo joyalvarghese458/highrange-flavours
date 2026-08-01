@@ -46,7 +46,7 @@ export function Hero() {
           </p>
           <InternalHashLink
             href="/#products"
-            className="mt-6 inline-flex items-center gap-3 rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-forest shadow-2xl shadow-black/20 transition-all duration-300 hover:scale-[1.03] hover:bg-[#d9b63b] hover:shadow-gold/25 md:mt-9"
+            className="shop-now-button mt-6 inline-flex items-center gap-3 rounded-lg bg-[#6f4e37] px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-ivory shadow-2xl shadow-black/25 transition-colors duration-300 hover:bg-[#815c43] md:mt-9"
           >
             Shop Now
             <ArrowRight size={18} />
