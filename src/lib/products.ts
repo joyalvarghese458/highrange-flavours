@@ -100,6 +100,20 @@ export const products: Product[] = [
     ],
   },
   {
+    id: "star-anase",
+    name: "Star Anase",
+    localName: "Thakkolam",
+    image: "/star-anase.webp",
+    shortDescription: "Distinct star-shaped spice with a sweet licorice-like warmth.",
+    detailDescription:
+      "Carefully packed whole star anase selected for its bold aroma and naturally sweet spice profile. It adds beautiful depth to biryani, masala blends, broths, and slow-cooked dishes.",
+    origin: "Kerala spice gardens",
+    aroma: "Sweet, warm, and gently licorice-like",
+    bestFor: ["Biryani", "Masala blends", "Broths", "Slow-cooked curries"],
+    highlights: ["Whole star-shaped spice", "Rich natural aroma", "Packed for everyday freshness"],
+    variants: [{ weight: "250g", price: 159, originalPrice: 199 }],
+  },
+  {
     id: "premium-cardamom-tea",
     name: "Premium Cardamom Tea",
     localName: "Elaichi Chaya",
@@ -114,6 +128,20 @@ export const products: Product[] = [
     variants: [
       { weight: "250g", price: 179, originalPrice: 229 },
     ],
+  },
+  {
+    id: "tea-premium",
+    name: "Premium Tea",
+    localName: "Premium Chaya",
+    image: "/tea-premium.webp",
+    shortDescription: "Rich premium tea with a smooth body and refreshing finish.",
+    detailDescription:
+      "A premium tea crafted for full flavor, inviting aroma, and a satisfying everyday cup. Its balanced character works beautifully for morning brews, evening tea breaks, and serving guests.",
+    origin: "Idukki high ranges, Kerala",
+    aroma: "Rich, malty, and clean",
+    bestFor: ["Morning tea", "Evening tea", "Guests", "Daily brewing"],
+    highlights: ["Premium tea blend", "Smooth full-bodied cup", "Freshly packed goodness"],
+    variants: [{ weight: "250g", price: 139, originalPrice: 179 }],
   },
 ];
 

@@ -31,6 +31,9 @@ const columns = [
       { label: "Black Pepper", href: "/products/black-pepper" },
       { label: "Cloves", href: "/products/cloves" },
       { label: "Cinnamon", href: "/products/cinnamon" },
+      { label: "Star Anase", href: "/products/star-anase" },
+      { label: "Premium Cardamom Tea", href: "/products/premium-cardamom-tea" },
+      { label: "Premium Tea", href: "/products/tea-premium" },
     ],
   },
 ];
