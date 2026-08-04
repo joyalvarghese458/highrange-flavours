@@ -1,7 +1,7 @@
 export type ProductVariant = {
   weight: string;
   price: number;
-  originalPrice: number;
+  originalPrice?: number;
 };
 
 export type Product = {
@@ -54,11 +54,11 @@ export const products: Product[] = [
     aroma: "Woody, warm, and sharply spicy",
     bestFor: ["Curries", "Soups", "Marinades", "Table grinding"],
     highlights: ["Whole peppercorns", "High essential-oil aroma", "No artificial polish"],
-    showLatestPriceCTA: true,
     variants: [
-      { weight: "150g", price: 129, originalPrice: 159 },
-      { weight: "250g", price: 279, originalPrice: 339 },
-      { weight: "500g", price: 499, originalPrice: 599 },
+      { weight: "100g", price: 110 },
+      { weight: "250g", price: 260 },
+      { weight: "500g", price: 520 },
+      { weight: "1kg", price: 1100 },
     ],
   },
   {
@@ -75,14 +75,15 @@ export const products: Product[] = [
     bestFor: ["Masala tea", "Biriyani", "Garam masala", "Festive sweets"],
     highlights: ["Whole flower buds", "Strong natural fragrance", "Bulk order friendly"],
     variants: [
-      { weight: "150g", price: 99, originalPrice: 129 },
-      { weight: "250g", price: 179, originalPrice: 229 },
-      { weight: "500g", price: 329, originalPrice: 399 },
+      { weight: "100g", price: 260 },
+      { weight: "250g", price: 520 },
+      { weight: "500g", price: 1040 },
+      { weight: "1kg", price: 2080 },
     ],
   },
   {
     id: "cinnamon",
-    name: "Cinnamon",
+    name: "Imported Cinnamon",
     localName: "Karugapatta",
     image: "/cinnamon.webp",
     badge: "BULK ORDERS WELCOME",
@@ -94,24 +95,30 @@ export const products: Product[] = [
     bestFor: ["Tea", "Desserts", "Rice dishes", "Spice blends"],
     highlights: ["Whole bark pieces", "Warm natural sweetness", "Great for home and bulk use"],
     variants: [
-      { weight: "150g", price: 89, originalPrice: 109 },
-      { weight: "250g", price: 159, originalPrice: 199 },
-      { weight: "500g", price: 289, originalPrice: 349 },
+      { weight: "100g", price: 95 },
+      { weight: "250g", price: 220 },
+      { weight: "500g", price: 440 },
+      { weight: "1kg", price: 880 },
     ],
   },
   {
     id: "star-anase",
-    name: "Star Anase",
+    name: "Star Anise",
     localName: "Thakkolam",
     image: "/star-anase.webp",
     shortDescription: "Distinct star-shaped spice with a sweet licorice-like warmth.",
     detailDescription:
-      "Carefully packed whole star anase selected for its bold aroma and naturally sweet spice profile. It adds beautiful depth to biryani, masala blends, broths, and slow-cooked dishes.",
+      "Carefully packed whole star anise selected for its bold aroma and naturally sweet spice profile. It adds beautiful depth to biryani, masala blends, broths, and slow-cooked dishes.",
     origin: "Kerala spice gardens",
     aroma: "Sweet, warm, and gently licorice-like",
     bestFor: ["Biryani", "Masala blends", "Broths", "Slow-cooked curries"],
     highlights: ["Whole star-shaped spice", "Rich natural aroma", "Packed for everyday freshness"],
-    variants: [{ weight: "250g", price: 159, originalPrice: 199 }],
+    variants: [
+      { weight: "100g", price: 90 },
+      { weight: "250g", price: 225 },
+      { weight: "500g", price: 450 },
+      { weight: "1kg", price: 925 },
+    ],
   },
   {
     id: "premium-cardamom-tea",
@@ -126,7 +133,7 @@ export const products: Product[] = [
     bestFor: ["Morning tea", "Evening chai", "Guests", "Daily refreshment"],
     highlights: ["Cardamom-infused blend", "Rich natural aroma", "Smooth everyday cup"],
     variants: [
-      { weight: "250g", price: 179, originalPrice: 229 },
+      { weight: "250g", price: 140 },
     ],
   },
   {
@@ -141,7 +148,7 @@ export const products: Product[] = [
     aroma: "Rich, malty, and clean",
     bestFor: ["Morning tea", "Evening tea", "Guests", "Daily brewing"],
     highlights: ["Premium tea blend", "Smooth full-bodied cup", "Freshly packed goodness"],
-    variants: [{ weight: "250g", price: 139, originalPrice: 179 }],
+    variants: [{ weight: "250g", price: 110 }],
   },
 ];
 

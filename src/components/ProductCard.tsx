@@ -139,9 +139,11 @@ export function ProductCard({
                 <span className="font-serif text-3xl font-semibold text-forest">
                   {formatPrice(variant.price)}
                 </span>
-                <span className="text-sm font-bold text-charcoal/45 line-through">
-                  {formatPrice(variant.originalPrice)}
-                </span>
+                {variant.originalPrice !== undefined && (
+                  <span className="text-sm font-bold text-charcoal/45 line-through">
+                    {formatPrice(variant.originalPrice)}
+                  </span>
+                )}
               </div>
             </div>
           )}
