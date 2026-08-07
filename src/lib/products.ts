@@ -36,7 +36,7 @@ export const products: Product[] = [
     highlights: ["Whole green pods", "Farm-sourced freshness", "Naturally sun-finished"],
     showLatestPriceCTA: true,
     variants: [
-      { weight: "150g", price: 249, originalPrice: 299 },
+      { weight: "100g", price: 249, originalPrice: 299 },
       { weight: "250g", price: 459, originalPrice: 549 },
       { weight: "500g", price: 1049, originalPrice: 1249 },
     ],
@@ -58,7 +58,7 @@ export const products: Product[] = [
       { weight: "100g", price: 110 },
       { weight: "250g", price: 260 },
       { weight: "500g", price: 520 },
-      { weight: "1kg", price: 1100 },
+      { weight: "1kg", price: 1040 },
     ],
   },
   {
@@ -114,10 +114,10 @@ export const products: Product[] = [
     bestFor: ["Biryani", "Masala blends", "Broths", "Slow-cooked curries"],
     highlights: ["Whole star-shaped spice", "Rich natural aroma", "Packed for everyday freshness"],
     variants: [
-      { weight: "100g", price: 90 },
-      { weight: "250g", price: 225 },
-      { weight: "500g", price: 450 },
-      { weight: "1kg", price: 925 },
+      { weight: "100g", price: 95 },
+      { weight: "250g", price: 230 },
+      { weight: "500g", price: 460 },
+      { weight: "1kg", price: 900 },
     ],
   },
   {
