@@ -4,11 +4,11 @@ import { SectionReveal } from "./SectionReveal";
 
 const images = [
   {
-    src: "/about-cardamom-plants.png",
+    src: "/about-cardamom-plants.webp",
     alt: "Cardamom plants growing under shade trees in a high-range plantation",
   },
   {
-    src: "/about-pepper-plants.png",
+    src: "/about-pepper-plants.webp",
     alt: "Black pepper vines growing in a tropical spice plantation",
   },
 ];
