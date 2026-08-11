@@ -115,9 +115,10 @@ const galleryImages = [
     aspect: "aspect-[4/3]",
   },
   {
-    src: "/about/spices-drying.png",
-    alt: "Illustration of cloves, cinnamon, pepper, and cardamom drying on woven trays",
+    src: "/about/spices-drying.mp4",
+    alt: "Cloves, cinnamon, pepper, and cardamom drying on woven trays",
     aspect: "aspect-[4/5]",
+    video: true,
   },
   {
     src: "/about/idukki-plantation.webp",
@@ -390,11 +391,28 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {galleryImages.map((image) => (
               <SectionReveal key={image.alt}>
-                <AboutImage
-                  src={image.src}
-                  alt={image.alt}
-                  className={image.aspect}
-                />
+                {image.video ? (
+                  <div
+                    className={`relative overflow-hidden rounded-2xl border border-gold/25 bg-cream-deep shadow-2xl shadow-forest/12 ${image.aspect}`}
+                  >
+                    <video
+                      src={image.src}
+                      aria-label={image.alt}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      className="pointer-events-none size-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <AboutImage
+                    src={image.src}
+                    alt={image.alt}
+                    className={image.aspect}
+                  />
+                )}
               </SectionReveal>
             ))}
           </div>
