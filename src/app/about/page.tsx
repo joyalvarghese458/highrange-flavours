@@ -141,6 +141,26 @@ const galleryImages = [
     alt: "Illustration of family spice cultivation heritage in the Idukki hills",
     aspect: "aspect-[4/3]",
   },
+  {
+    src: "/about/highrange1.webp",
+    alt: "A view from the high ranges of Idukki",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    src: "/about/highrange2.jpg",
+    alt: "The natural landscape of the high ranges",
+    aspect: "aspect-[4/3]",
+  },
+  {
+    src: "/about/highrange3.webp",
+    alt: "Life and cultivation in the high ranges",
+    aspect: "aspect-square",
+  },
+  {
+    src: "/about/highrange4.jpg",
+    alt: "The green hills of the high ranges",
+    aspect: "aspect-[4/5]",
+  },
 ];
 
 // TODO: client to confirm/replace actual numbers before launch
