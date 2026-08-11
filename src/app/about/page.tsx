@@ -126,14 +126,15 @@ const galleryImages = [
     aspect: "aspect-[4/3]",
   },
   {
+    src: "/about/packed-products.mp4",
+    alt: "Illustration of packed spice products with cardamom, pepper, cloves, and cinnamon",
+    aspect: "aspect-[4/5]",
+    video: true,
+  },
+  {
     src: "/about/responsible-farming.webp",
     alt: "Illustration of careful spice harvesting baskets on rich farm soil",
     aspect: "aspect-[4/3]",
-  },
-  {
-    src: "/about/packed-products.png",
-    alt: "Illustration of packed spice products with cardamom, pepper, cloves, and cinnamon",
-    aspect: "aspect-[4/5]",
   },
   {
     src: "/about/family-heritage.webp",
