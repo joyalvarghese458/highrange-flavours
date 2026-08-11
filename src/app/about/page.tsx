@@ -85,22 +85,22 @@ const processSteps = [
 
 const aboutImages = {
   hero: {
-    src: "/about/idukki-spice-hero.png",
+    src: "/about/idukki-spice-hero.webp",
     alt: "Illustration of misty Idukki spice plantations with cardamom plants and pepper vines",
   },
   plantation: {
-    src: "/about/idukki-plantation.png",
+    src: "/about/idukki-plantation.webp",
     alt: "Illustration of terraced Idukki spice plantations after rain",
   },
   sustainability: {
-    src: "/about/responsible-farming.png",
+    src: "/about/responsible-farming.webp",
     alt: "Illustration of responsible spice farming with baskets of cardamom and pepper",
   },
 };
 
 const galleryImages = [
   {
-    src: "/about/idukki-spice-hero.png",
+    src: "/about/idukki-spice-hero.webp",
     alt: "Illustration of mist-covered spice plantations in Idukki",
     aspect: "aspect-[4/5]",
   },
@@ -110,7 +110,7 @@ const galleryImages = [
     aspect: "aspect-[4/3]",
   },
   {
-    src: "/about/cardamom-pods.png",
+    src: "/about/cardamom-pods.webp",
     alt: "Illustration of green cardamom pods growing in the high ranges",
     aspect: "aspect-[4/3]",
   },
@@ -120,12 +120,12 @@ const galleryImages = [
     aspect: "aspect-[4/5]",
   },
   {
-    src: "/about/idukki-plantation.png",
+    src: "/about/idukki-plantation.webp",
     alt: "Illustration of lush spice plantations across Idukki hills",
     aspect: "aspect-[4/3]",
   },
   {
-    src: "/about/responsible-farming.png",
+    src: "/about/responsible-farming.webp",
     alt: "Illustration of careful spice harvesting baskets on rich farm soil",
     aspect: "aspect-[4/3]",
   },
@@ -135,7 +135,7 @@ const galleryImages = [
     aspect: "aspect-[4/5]",
   },
   {
-    src: "/about/family-heritage.png",
+    src: "/about/family-heritage.webp",
     alt: "Illustration of family spice cultivation heritage in the Idukki hills",
     aspect: "aspect-[4/3]",
   },
