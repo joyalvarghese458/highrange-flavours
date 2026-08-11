@@ -39,6 +39,7 @@ export const products: Product[] = [
       { weight: "100g", price: 249, originalPrice: 299 },
       { weight: "250g", price: 459, originalPrice: 549 },
       { weight: "500g", price: 1049, originalPrice: 1249 },
+      { weight: "1kg", price: 2099, originalPrice: 2499 },
     ],
   },
   {
